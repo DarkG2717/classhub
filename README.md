@@ -100,7 +100,7 @@ classhub/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/DARKG2717/classhub.git
+git clone https://github.com/DarkG2717/classhub.git
 ```
 
 2. Enter the project directory:

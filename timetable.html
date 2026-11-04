@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="View your weekly ClassHub course timetable, venues and lecturers.">
+
+    <title>Class Timetable | ClassHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/timetable.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/timetable.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">ClassHub</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html" aria-current="page">Timetable</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="announcements.html">Updates</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="timetable-page">
+
+        <section class="timetable-heading">
+            <h1>My Class Timetable</h1>
+            <p>Keep track of your lectures, venues and lecturers.</p>
+        </section>
+
+        <section class="timetable-controls">
+            <label for="day-filter">Filter by day:</label>
+
+            <select id="day-filter">
+                <option value="all">All days</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </section>
+
+        <section class="timetable-section">
+            <div class="table-container">
+                <table class="timetable-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Day</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Course Code</th>
+                            <th scope="col">Course Title</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">Lecturer</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="timetable-body">
+                        <tr>
+                            <td colspan="6">Loading timetable...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="year"></span> ClassHub.
+            Built for our class.
+        </p>
+    </footer>
+
+</body>
+</html>

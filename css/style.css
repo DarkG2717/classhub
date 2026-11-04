@@ -1,0 +1,310 @@
+
+/* =================================
+   CLASSHUB - MAIN STYLESHEET
+   ================================= */
+
+/* 1. Global settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6c4ce4;
+    --primary-dark: #5032bd;
+    --background: #f7f7fc;
+    --text: #25243a;
+    --muted: #68677a;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 3px solid #ffae42;
+    outline-offset: 4px;
+}
+
+/* 2. Navigation */
+
+.site-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--primary);
+}
+
+/* 3. Hero section */
+
+.hero {
+    background: linear-gradient(135deg, #6c4ce4, #9875f5);
+    color: var(--white);
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #f0ebff;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-dark);
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Welcome section */
+
+.welcome {
+    text-align: center;
+    max-width: 750px;
+    margin: 55px auto 35px;
+    padding: 0 20px;
+}
+
+.welcome h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* 5. Dashboard */
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 5% 70px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.card {
+    display: block;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 18px;
+    min-height: 175px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eeeeF5;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09);
+}
+
+.card h2 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* 6. Card colours */
+
+.timetable-card {
+    border-top: 5px solid #4285f4;
+}
+
+.timetable-card h2 {
+    color: #2870dc;
+}
+
+.notes-card {
+    border-top: 5px solid #ff9f43;
+}
+
+.notes-card h2 {
+    color: #e58a25;
+}
+
+.updates-card {
+    border-top: 5px solid #ed6a9e;
+}
+
+.updates-card h2 {
+    color: #d94d83;
+}
+
+.contacts-card {
+    border-top: 5px solid #36b98a;
+}
+
+.contacts-card h2 {
+    color: #239b70;
+}
+
+/* 7. Footer */
+
+.site-footer {
+    background-color: #25243a;
+    color: #eeeeF5;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 14px;
+}
+
+/* 8. Tablet responsiveness */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px 20px;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .dashboard {
+        gap: 18px;
+    }
+}
+
+/* 9. Mobile responsiveness */
+
+@media (max-width: 550px) {
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 18px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .welcome {
+        margin-top: 40px;
+    }
+
+    .welcome h2 {
+        font-size: 25px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        padding-bottom: 45px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+}
+
+/* 10. Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

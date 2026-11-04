@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="ClassHub - Everything your class needs, in one place.">
+
+    <title>ClassHub | Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/login.js" defer></script>
+</head>
+
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <section class="login-screen" id="login-screen">
+
+        <div class="login-box">
+
+            <div class="login-logo">CH</div>
+
+            <h1>Welcome to ClassHub!</h1>
+
+            <p>Everything your class needs, in one place.</p>
+
+            <form id="login-form">
+
+                <label for="username">What should we call you?</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    maxlength="25"
+                    autocomplete="given-name"
+                    required
+                >
+
+                <button type="submit">
+                    Continue
+                </button>
+
+            </form>
+
+            <p class="login-note">
+                Your username will be remembered on this device.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN WEBSITE -->
+    <div id="site-content" hidden>
+
+        <!-- HEADER -->
+        <header class="site-header">
+
+            <nav class="navbar" aria-label="Main navigation">
+
+                <a href="index.html" class="logo">ClassHub</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="timetable.html">Timetable</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="announcements.html">Updates</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+
+            </nav>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- HERO SECTION -->
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <h1>Everything your class needs, in one place.</h1>
+
+                    <p>
+                        Stay organised, access learning materials
+                        and keep up with everything happening in your class.
+                    </p>
+
+                    <a href="timetable.html" class="hero-button">
+                        View Timetable
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome">
+
+                <h2 id="personal-greeting">Hi!</h2>
+
+                <p>
+                    Welcome to your ClassHub dashboard.
+                    What would you like to explore today?
+                </p>
+
+                <button
+                    type="button"
+                    id="change-username"
+                    class="change-username-button"
+                >
+                    Change username
+                </button>
+
+            </section>
+
+
+            <!-- DASHBOARD -->
+            <section class="dashboard">
+
+                <a href="timetable.html" class="card timetable-card">
+                    <h2>Timetable</h2>
+                    <p>Check your weekly lecture schedule.</p>
+                    <span>View timetable →</span>
+                </a>
+
+                <a href="notes.html" class="card notes-card">
+                    <h2>Study Notes</h2>
+                    <p>Find course materials and learning resources.</p>
+                    <span>Explore notes →</span>
+                </a>
+
+                <a href="announcements.html" class="card updates-card">
+                    <h2>Class Updates</h2>
+                    <p>Stay informed about assignments, tests and activities.</p>
+                    <span>View updates →</span>
+                </a>
+
+                <a href="contacts.html" class="card contacts-card">
+                    <h2>Class Contacts</h2>
+                    <p>Find your class representatives and important contacts.</p>
+                    <span>View contacts →</span>
+                </a>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+
+            <p>
+                &copy; <span id="year"></span>
+                ClassHub. Built for our class.
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>

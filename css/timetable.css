@@ -1,0 +1,159 @@
+
+/* =================================
+   CLASSHUB - TIMETABLE STYLES
+   ================================= */
+
+/* 1. Main page */
+
+.timetable-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 5% 80px;
+}
+
+/* 2. Page heading */
+
+.timetable-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.timetable-heading h1 {
+    color: var(--primary);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.timetable-heading p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* 3. Day filter */
+
+.timetable-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.timetable-controls label {
+    font-weight: 600;
+}
+
+.timetable-controls select {
+    padding: 10px 15px;
+    border: 1px solid #dcd9eb;
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--text);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.timetable-controls select:focus-visible {
+    outline: 3px solid #ffae42;
+    outline-offset: 3px;
+}
+
+/* 4. Table container */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 5. Timetable table */
+
+.timetable-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.timetable-table thead {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.timetable-table th {
+    padding: 18px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.timetable-table td {
+    padding: 17px 15px;
+    border-bottom: 1px solid #eeeeF5;
+    font-size: 14px;
+}
+
+.timetable-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.timetable-table tbody tr:hover {
+    background-color: #f5f2ff;
+}
+
+.timetable-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 6. Highlight course codes */
+
+.timetable-table td:nth-child(3) {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* 7. Tablet and mobile screens */
+
+@media (max-width: 768px) {
+    .timetable-page {
+        padding: 40px 4% 60px;
+    }
+
+    .timetable-heading h1 {
+        font-size: 30px;
+    }
+
+    .timetable-controls {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 550px) {
+    .timetable-heading h1 {
+        font-size: 26px;
+    }
+
+    .timetable-heading p {
+        font-size: 14px;
+    }
+
+    .timetable-controls {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .timetable-controls select {
+        width: 100%;
+    }
+}
+
+/* 8. Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .timetable-table tbody tr {
+        transition: none;
+    }
+}

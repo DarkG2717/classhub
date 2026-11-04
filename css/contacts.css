@@ -1,0 +1,206 @@
+
+/* =================================
+   CLASSHUB - CONTACTS STYLES
+   ================================= */
+
+.contacts-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 0 75px;
+}
+
+/* Page heading */
+.contacts-heading {
+    text-align: center;
+    padding: 45px 20px;
+    margin-bottom: 45px;
+    background: linear-gradient(135deg, #eee9ff, #e7f2ff);
+    border-radius: 22px;
+}
+
+.contacts-heading h1 {
+    color: #5032bd;
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+}
+
+.contacts-heading p {
+    color: #68677a;
+    font-size: 1.05rem;
+}
+
+/* Section introduction */
+.contacts-intro {
+    margin-bottom: 30px;
+}
+
+.contacts-intro h2 {
+    color: #25243a;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.contacts-intro p {
+    color: #68677a;
+    line-height: 1.6;
+}
+
+/* Contact card layout */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Individual cards */
+.contact-card {
+    background: #ffffff;
+    padding: 30px 22px;
+    border: 1px solid #eeeeF5;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 7px 22px rgba(37, 36, 58, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 13px 28px rgba(37, 36, 58, 0.11);
+}
+
+/* Profile picture placeholders */
+.contact-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 36, 58, 0.12);
+}
+
+/* Avatar colours */
+.contact-avatar.purple {
+    background: #e8ddff;
+    color: #6842c2;
+}
+
+.contact-avatar.blue {
+    background: #dceeff;
+    color: #2875bd;
+}
+
+.contact-avatar.orange {
+    background: #ffead7;
+    color: #c56a20;
+}
+
+.contact-avatar.pink {
+    background: #ffe0ed;
+    color: #c34e83;
+}
+
+.contact-avatar.green {
+    background: #dcf5e5;
+    color: #298451;
+}
+
+.contact-avatar.yellow {
+    background: #fff2c9;
+    color: #a47a12;
+}
+
+/* Names and roles */
+.contact-card h2 {
+    color: #25243a;
+    font-size: 1.35rem;
+    margin-bottom: 9px;
+}
+
+.contact-role {
+    display: inline-block;
+    color: #6842c2;
+    background: #f0ebff;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.contact-phone {
+    color: #68677a;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    overflow-wrap: anywhere;
+}
+
+/* WhatsApp button */
+.whatsapp-button {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #20b968;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.whatsapp-button:hover {
+    background: #159653;
+}
+
+/* Unavailable contact */
+.contact-unavailable {
+    color: #89889a;
+    background: #f3f3f8;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+    .contacts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-heading {
+        padding: 35px 15px;
+    }
+
+    .contacts-heading h1 {
+        font-size: 2rem;
+    }
+
+    .contacts-page {
+        padding-top: 30px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .contact-card,
+    .whatsapp-button {
+        transition: none;
+    }
+
+    .contact-card:hover {
+        transform: none;
+    }
+}

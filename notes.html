@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find and access course notes and study materials on ClassHub.">
+
+    <title>Course Notes | ClassHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/notes.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">ClassHub</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="notes.html" aria-current="page">Notes</a></li>
+                <li><a href="announcements.html">Updates</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="notes-page">
+
+        <section class="notes-heading">
+            <h1>Course Notes</h1>
+            <p>Find your study materials and keep learning.</p>
+        </section>
+
+        <section class="notes-intro">
+            <h2>Your Study Library</h2>
+            <p>
+                Browse course materials shared with your classmates.
+                Choose a course to find its available notes.
+            </p>
+        </section>
+
+        <section class="notes-controls">
+            <label for="notes-search">Search for notes:</label>
+            <input
+                type="search"
+                id="notes-search"
+                placeholder="Search by course code or title..."
+            >
+        </section>
+
+        <section class="notes-library">
+            <div id="notes-container" class="notes-grid">
+                <p>Loading course notes...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> ClassHub. Built for our class.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+/* =================================
+   CLASSHUB - LOGIN SCREEN
+   ================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #eee9ff, #e8f2ff);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 45px 35px;
+    background: #ffffff;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(37, 36, 58, 0.10);
+}
+
+.login-logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background: #6c4ce4;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.login-box h1 {
+    color: #5032bd;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.login-box > p {
+    color: #68677a;
+    line-height: 1.6;
+}
+
+#login-form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#login-form label {
+    display: block;
+    color: #25243a;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#username {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dddded;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 18px;
+}
+
+#username:focus {
+    border-color: #6c4ce4;
+    box-shadow: 0 0 0 3px rgba(108, 76, 228, 0.12);
+}
+
+#login-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #6c4ce4;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#login-form button:hover {
+    background: #5032bd;
+}
+
+.login-note {
+    margin-top: 22px;
+    font-size: 0.85rem;
+}
+
+/* Change username button */
+
+.change-username-button {
+    margin-top: 12px;
+    padding: 9px 15px;
+    border: 1px solid #6c4ce4;
+    border-radius: 8px;
+    background: transparent;
+    color: #6c4ce4;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.change-username-button:hover {
+    background: #f0ebff;
+}
+
+/* Mobile screens */
+
+@media (max-width: 500px) {
+    .login-box {
+        padding: 35px 22px;
+    }
+
+    .login-box h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #login-form button {
+        transition: none;
+    }
+}

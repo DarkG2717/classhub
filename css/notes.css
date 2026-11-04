@@ -1,0 +1,192 @@
+
+/* =================================
+   CLASSHUB - NOTES STYLES
+   ================================= */
+
+/* 1. Main page */
+
+.notes-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 5% 80px;
+}
+
+/* 2. Page heading */
+
+.notes-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.notes-heading h1 {
+    color: var(--primary);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.notes-heading p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* 3. Introduction */
+
+.notes-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+.notes-intro h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.notes-intro p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* 4. Search section */
+
+.notes-controls {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.notes-controls label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.notes-controls input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dcd9eb;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: var(--white);
+    color: var(--text);
+}
+
+.notes-controls input:focus-visible {
+    outline: 3px solid #ffae42;
+    outline-offset: 3px;
+}
+
+/* 5. Notes grid */
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* 6. Individual note cards */
+
+.note-card {
+    background-color: var(--white);
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid #eeeeF5;
+    border-top: 5px solid var(--primary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09);
+}
+
+.note-card h2 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.note-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.note-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+    flex-grow: 1;
+}
+
+/* 7. Notes button */
+
+.notes-button {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+}
+
+.notes-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* 8. No results message */
+
+.no-notes {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--muted);
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 12px;
+}
+
+/* 9. Tablet layout */
+
+@media (max-width: 900px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 10. Mobile layout */
+
+@media (max-width: 550px) {
+    .notes-page {
+        padding: 40px 5% 60px;
+    }
+
+    .notes-heading h1 {
+        font-size: 29px;
+    }
+
+    .notes-intro h2 {
+        font-size: 22px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .note-card {
+        padding: 24px;
+    }
+}
+
+/* 11. Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .note-card {
+        transition: none;
+    }
+}

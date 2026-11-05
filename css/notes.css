@@ -190,3 +190,305 @@
         transition: none;
     }
 }
+
+/* =================================
+   CLASSHUB - LECTURE LIBRARY
+   ================================= */
+
+/* Course card icon */
+
+.course-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* Number of available lectures */
+
+.lecture-count {
+    display: inline-block;
+    color: var(--primary);
+    background-color: #f0edff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Back navigation */
+
+.back-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: var(--primary-dark);
+}
+
+/* Lecture list */
+
+.lecture-library {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lecture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Individual lecture cards */
+
+.lecture-card {
+    background-color: var(--white);
+    padding: 22px 25px;
+    border-radius: 14px;
+    border: 1px solid #eeeeF5;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.lecture-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lecture-icon {
+    font-size: 30px;
+}
+
+.lecture-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.lecture-info p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Individual lecture material */
+
+.lecture-material {
+    background-color: var(--white);
+    padding: 40px 25px;
+    border-radius: 16px;
+    border: 1px solid #eeeeF5;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.material-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.lecture-material h2 {
+    margin-bottom: 12px;
+}
+
+.lecture-material p {
+    color: var(--muted);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Mobile layout */
+
+@media (max-width: 550px) {
+
+    .lecture-card {
+        padding: 18px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .lecture-card .notes-button {
+        width: 100%;
+    }
+
+    .lecture-material {
+        padding: 30px 18px;
+    }
+
+}
+
+
+/* =================================
+   CLASSHUB - LECTURE LIBRARY
+   ================================= */
+
+.course-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.lecture-count {
+    display: inline-block;
+    color: var(--primary);
+    background: #f0edff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: var(--primary-dark);
+}
+
+.lecture-library {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lecture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.lecture-card {
+    background: var(--white);
+    padding: 22px 25px;
+    border-radius: 14px;
+    border: 1px solid #eeeeF5;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.lecture-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lecture-icon {
+    font-size: 30px;
+}
+
+.lecture-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.lecture-info p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.lecture-material {
+    width: 100%;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #eeeeF5;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.lecture-material h2 {
+    margin-bottom: 12px;
+}
+
+.lecture-material p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.lecture-pdf {
+    display: block;
+    width: 100%;
+    height: 750px;
+    border: 1px solid #e5e5ee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #f7f7fc;
+}
+
+@media (max-width: 600px) {
+    .lecture-card {
+        padding: 18px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .lecture-card .notes-button {
+        width: 100%;
+    }
+
+    .lecture-material {
+        padding: 15px;
+    }
+
+    .lecture-pdf {
+        height: 550px;
+    }
+}
+
+/* =================================
+   NOTES SEARCH BAR
+   ================================= */
+
+.notes-search-section {
+    max-width: 650px;
+    margin: 30px auto 40px;
+}
+
+.notes-search-section label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.notes-search-section input#notes-search {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    background: #ffffff;
+    color: #25243a;
+    border: 2px solid #ded7fa;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(80, 50, 189, 0.07);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notes-search-section input#notes-search::placeholder {
+    color: #9290a3;
+    opacity: 1;
+}
+
+.notes-search-section input#notes-search:focus {
+    border-color: #6c4ce4;
+    box-shadow: 0 0 0 4px rgba(108, 76, 228, 0.13);
+}
+
+.notes-search-section input#notes-search:hover {
+    border-color: #a18bea;
+}

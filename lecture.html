@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access ClassHub lecture materials.">
+
+    <title>Course Lectures | ClassHub</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/course-data.js" defer></script>
+    <script src="js/lectures.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">ClassHub</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="notes.html" aria-current="page">Notes</a></li>
+                <li><a href="announcements.html">Updates</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="notes-page">
+
+        <a href="notes.html" class="back-link">
+            ← Back to All Courses
+        </a>
+
+        <section class="notes-heading">
+            <h1 id="course-heading">Course Lectures</h1>
+            <p id="course-description">
+                Select the lecture you want to access.
+            </p>
+        </section>
+
+        <section class="lecture-library">
+            <div id="lecture-container" class="lecture-list">
+                <p>Loading lectures...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> ClassHub. Built for our class.</p>
+    </footer>
+
+</body>
+</html>

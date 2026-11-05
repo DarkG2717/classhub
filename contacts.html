@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find important class contacts on ClassHub.">
+
+    <meta name="description" content="Contact your ClassHub class representatives.">
+
     <title>Contacts | ClassHub</title>
-    
+
+    <!-- Stylesheets -->
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contacts.css">
 
+    <!-- JavaScript -->
     <script src="js/main.js" defer></script>
-    <script src="js/contacts.js" defer></script>
 </head>
+
 <body>
 
+    <!-- Navigation -->
     <header class="site-header">
         <nav class="navbar" aria-label="Main navigation">
+
             <a href="index.html" class="logo">ClassHub</a>
 
             <ul class="nav-links">
@@ -25,29 +31,161 @@
                 <li><a href="timetable.html">Timetable</a></li>
                 <li><a href="notes.html">Notes</a></li>
                 <li><a href="announcements.html">Updates</a></li>
-                <li><a href="contacts.html" aria-current="page">Contacts</a></li>
+                <li>
+                    <a href="contacts.html" aria-current="page">
+                        Contacts
+                    </a>
+                </li>
             </ul>
+
         </nav>
     </header>
 
+    <!-- Main content -->
     <main class="contacts-page">
+
+        <!-- Page heading -->
         <section class="contacts-heading">
             <h1>Class Contacts</h1>
-            <p>Find the people who help keep our class connected.</p>
+            <p>
+                Meet your class representatives.
+                We're here to help you stay connected.
+            </p>
         </section>
 
-        <section class="contacts-intro">
-            <h2>Meet Your Class Representatives</h2>
-            <p>Reach out to the right people whenever you need assistance.</p>
+        <!-- Contact cards -->
+        <section class="contacts-container">
+
+            <!-- Course Representative -->
+            <article class="contact-card">
+
+                <div class="contact-icon">👤</div>
+
+                <h2>ESE</h2>
+
+                <p class="contact-role">
+                    Course Representative
+                </p>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2349090229738"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </article>
+
+            <!-- Assistant Course Representative -->
+            <article class="contact-card">
+
+                <div class="contact-icon">👤</div>
+
+                <h2>Toluwani</h2>
+
+                <p class="contact-role">
+                    Assistant Course Representative
+                </p>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2348109761441"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </article>
+
+            <!-- Director of Public Relations -->
+            <article class="contact-card">
+
+                <div class="contact-icon">👤</div>
+
+                <h2>Timmy</h2>
+
+                <p class="contact-role">
+                    Director of Public Relations
+                </p>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2349039310345"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </article>
+
+            <!-- Male Senator -->
+            <article class="contact-card">
+
+                <div class="contact-icon">👤</div>
+
+                <h2>Chisom</h2>
+
+                <p class="contact-role">
+                    Male Senator
+                </p>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2349134202065"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </article>
+
+            <!-- Female Senator -->
+            <article class="contact-card">
+
+                <div class="contact-icon">👤</div>
+
+                <h2>Simi</h2>
+
+                <p class="contact-role">
+                    Female Senator
+                </p>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2349022147112"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </article>
+
+            <!-- Secretary -->
+            <article class="contact-card">
+
+                <div class="contact-icon">👤</div>
+
+                <h2>Oyin</h2>
+
+                <p class="contact-role">
+                    Secretary
+                </p>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2348079037388"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </article>
+
         </section>
 
-        <section id="contacts-container" class="contacts-grid">
-            <!-- Contact cards will appear here -->
-        </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-        <p>&copy; <span id="year"></span> ClassHub. Built for our class.</p>
+        <p>
+            &copy; <span id="year"></span>
+            ClassHub. Built for our class.
+        </p>
     </footer>
 
 </body>

@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const heading = document.createElement("h2");
             heading.textContent =
-                "No events or announcements available right now.";
+                "📭 No events or announcements available right now.";
 
             const message = document.createElement("p");
             message.textContent =
-                "You're all caught up! Check back later for new class updates.";
+                "You're all caught up! Check back later for new class updates. 💜";
 
             emptyState.appendChild(heading);
             emptyState.appendChild(message);
@@ -107,22 +107,25 @@ document.addEventListener("DOMContentLoaded", function () {
             const categoryLabel = document.createElement("span");
             categoryLabel.className =
                 "announcement-category " + item.category;
-            categoryLabel.textContent = "CLASS ACTIVITY";
+            categoryLabel.textContent = "🎉 CLASS ACTIVITY";
 
             const title = document.createElement("h2");
             title.textContent = item.title;
 
+            // Date with calendar emoji
             const date = document.createElement("p");
             date.className = "announcement-date";
-            date.textContent = "Date: " + item.displayDate;
+            date.textContent = "📅 Date: " + item.displayDate;
 
+            // Time with clock emoji
             const time = document.createElement("p");
             time.className = "announcement-time";
-            time.textContent = "Time: " + item.time;
+            time.textContent = "🕒 Time: " + item.time;
 
+            // Venue with location emoji
             const venue = document.createElement("p");
             venue.className = "announcement-venue";
-            venue.textContent = "Venue: " + item.venue;
+            venue.textContent = "📍 Venue: " + item.venue;
 
             content.appendChild(categoryLabel);
             content.appendChild(title);

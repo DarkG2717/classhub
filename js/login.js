@@ -1,7 +1,28 @@
-
 /* =================================
    CLASSHUB - LOGIN JAVASCRIPT
    ================================= */
+
+// Approved usernames
+const privilegedUsernames = [
+    "CHUB-7KQ29",
+    "CHUB-M4X81",
+    "CHUB-P9D63",
+    "CHUB-T2W57",
+    "CHUB-R8F14"
+];
+
+// Check whether a username has lecture access
+function hasLectureAccess() {
+    const username = localStorage.getItem("classhubUsername");
+
+    if (!username) {
+        return false;
+    }
+
+    return privilegedUsernames.includes(
+        username.trim().toUpperCase()
+    );
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -27,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         siteContent.hidden = false;
     }
 
-    // Check whether a username has already been saved
+    // Check saved username
     const savedUsername = localStorage.getItem("classhubUsername");
 
     if (savedUsername) {
@@ -50,10 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         enterClassHub(username);
-
     });
 
-    // Allow students to change their username
+    // Change username
     changeUsernameButton.addEventListener("click", function () {
 
         loginScreen.hidden = false;
@@ -63,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.getItem("classhubUsername") || "";
 
         usernameInput.focus();
-
     });
 
 });

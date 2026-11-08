@@ -1,3 +1,7 @@
+/* =================================
+   CLASSHUB - COURSE DATA
+   ================================= */
+
 window.classHubCourses = [
     {
         id: "sta-111",
@@ -7,6 +11,7 @@ window.classHubCourses = [
         lectures: 2,
         materials: []
     },
+
     {
         id: "mth-101",
         code: "MTH 101",
@@ -15,6 +20,7 @@ window.classHubCourses = [
         lectures: 1,
         materials: []
     },
+
     {
         id: "phy-101",
         code: "PHY 101",
@@ -29,6 +35,7 @@ window.classHubCourses = [
             }
         ]
     },
+
     {
         id: "library-ict",
         code: "Use of Library & ICT",
@@ -37,12 +44,19 @@ window.classHubCourses = [
         lectures: 1,
         materials: []
     },
+
     {
         id: "gst-111",
         code: "GST 111",
         title: "Communication in English",
         description: "Lecture materials for GST 111.",
-        lectures: 1,
-        materials: []
+        lectures: 2,
+        materials: [
+            {
+                number: 1,
+                title: "Communication: Concepts, Processes, Forms, English in Nigeria, and Developmental Language Skills",
+                file: "assets/documents/GST-111/lecture-1.pdf"
+            }
+        ]
     }
 ];

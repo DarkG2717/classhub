@@ -1,87 +1,116 @@
 
 /* =================================
-   CLASSHUB - SAMPLE TIMETABLE DATA
-   ================================= */
+   CLASSHUB - OFFICIAL TIMETABLE DATA
+================================= */
 
 const timetableData = [
+
+    // MONDAY
     {
         day: "Monday",
-        time: "8:00 AM - 10:00 AM",
-        courseCode: "CSC 201",
-        courseTitle: "Data Structures",
-        venue: "ICT Lab 1",
-        lecturer: "Dr. Ada Okoro"
+        courseCode: "PHY 101",
+        time: "7:00 AM - 8:50 AM",
+        venue: "A107/F008 (SAT)",
+        group: "all"
     },
     {
         day: "Monday",
-        time: "10:30 AM - 12:30 PM",
-        courseCode: "MTH 203",
-        courseTitle: "Discrete Mathematics",
-        venue: "Lecture Hall B",
-        lecturer: "Mr. Tunde Bello"
+        courseCode: "COS 101",
+        time: "9:00 AM - 10:50 AM",
+        venue: "F204(SAT)",
+        group: "A"
+    },
+    {
+        day: "Monday",
+        courseCode: "COS 101",
+        time: "11:00 AM - 12:50 PM",
+        venue: "F204(SAT)",
+        group: "B"
+    },
+
+    // TUESDAY
+    {
+        day: "Tuesday",
+        courseCode: "COS 101",
+        time: "8:00 AM - 8:50 AM",
+        venue: "F204(SAT)",
+        group: "A"
     },
     {
         day: "Tuesday",
-        time: "9:00 AM - 11:00 AM",
-        courseCode: "CSC 205",
-        courseTitle: "Computer Organization",
-        venue: "Science Block 2",
-        lecturer: "Mrs. Nneka Eze"
+        courseCode: "BIS SEMINAR",
+        time: "9:00 AM - 9:50 AM",
+        venue: "AMPHITHEATRE",
+        group: "all"
     },
     {
         day: "Tuesday",
-        time: "12:00 PM - 2:00 PM",
-        courseCode: "GST 201",
-        courseTitle: "Communication Skills",
-        venue: "Lecture Hall A",
-        lecturer: "Dr. Kemi Adebayo"
+        courseCode: "COS 101",
+        time: "10:00 AM - 10:50 AM",
+        venue: "F204(SAT)",
+        group: "B"
+    },
+    {
+        day: "Tuesday",
+        courseCode: "BU-GST 105",
+        time: "11:00 AM - 12:50 PM",
+        venue: "GEDS (Physical Class or Online Call)",
+        group: "all"
+    },
+    {
+        day: "Tuesday",
+        courseCode: "STA 111",
+        time: "4:00 PM - 5:50 PM",
+        venue: "B007 (SAT)",
+        group: "all"
+    },
+
+    // WEDNESDAY
+    {
+        day: "Wednesday",
+        courseCode: "STA 111",
+        time: "8:00 AM - 8:50 AM",
+        venue: "Emerald Activity Hall",
+        group: "all"
     },
     {
         day: "Wednesday",
-        time: "8:00 AM - 10:00 AM",
-        courseCode: "CSC 207",
-        courseTitle: "Database Fundamentals",
-        venue: "ICT Lab 2",
-        lecturer: "Mr. Chidi Nwosu"
+        courseCode: "MTH 101",
+        time: "9:00 AM - 10:50 AM",
+        venue: "SCLT (SAT)",
+        group: "all"
     },
-    {
-        day: "Wednesday",
-        time: "10:30 AM - 12:30 PM",
-        courseCode: "STA 201",
-        courseTitle: "Introduction to Statistics",
-        venue: "Room C14",
-        lecturer: "Mrs. Lara James"
-    },
+
+    // THURSDAY
     {
         day: "Thursday",
-        time: "9:00 AM - 11:00 AM",
-        courseCode: "CSC 209",
-        courseTitle: "Web Development",
-        venue: "ICT Lab 1",
-        lecturer: "Mr. Femi Adeyemi"
+        courseCode: "NO CLASS",
+        time: "—",
+        venue: "—",
+        group: "all"
     },
+
+    // FRIDAY
     {
-        day: "Thursday",
-        time: "11:30 AM - 1:30 PM",
-        courseCode: "MTH 205",
-        courseTitle: "Linear Algebra",
-        venue: "Lecture Hall B",
-        lecturer: "Dr. Sola Yusuf"
+        day: "Friday",
+        courseCode: "GST 111",
+        time: "7:00 AM - 8:50 AM",
+        venue: "GEDS (Physical or Online)",
+        group: "all"
     },
     {
         day: "Friday",
-        time: "8:30 AM - 10:30 AM",
-        courseCode: "CSC 211",
-        courseTitle: "Software Engineering",
-        venue: "Room D08",
-        lecturer: "Mrs. Amaka Obi"
+        courseCode: "PHY 107",
+        time: "9:00 AM - 9:50 AM",
+        venue: "F011 (SAT)",
+        group: "A"
     },
     {
         day: "Friday",
-        time: "11:00 AM - 1:00 PM",
-        courseCode: "CSC 213",
-        courseTitle: "Algorithms",
-        venue: "Lecture Hall A",
-        lecturer: "Dr. David Mensah"
+        courseCode: "PHY 107",
+        time: "10:00 AM - 10:50 AM",
+        venue: "F011 (SAT)",
+        group: "B"
     }
+
 ];

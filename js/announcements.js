@@ -24,7 +24,7 @@ const announcementsData = [
         expiresAt: "2026-11-08T23:59:59",
         description: "",
         venue: "Queen Esther Activity Hall",
-        image: ""
+        image: "assets/images/neon-night-optimized.jpg"
     },
     {
         title: "BU FEST",
@@ -35,7 +35,7 @@ const announcementsData = [
         expiresAt: "2026-11-18T23:59:59",
         description: "",
         venue: "University Stadium",
-        image: ""
+        image: "assets/images/bu-fest-optimized.jpg"
     }
 ];
 

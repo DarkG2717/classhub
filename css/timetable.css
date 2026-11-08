@@ -1,7 +1,7 @@
 
 /* =================================
    CLASSHUB - TIMETABLE STYLES
-   ================================= */
+================================= */
 
 /* 1. Main page */
 
@@ -29,27 +29,33 @@
     font-size: 16px;
 }
 
-/* 3. Day filter */
+/* 3. Group selector */
 
 .timetable-controls {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-bottom: 20px;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 18px;
+    background: #f0edff;
+    border-radius: 12px;
 }
 
 .timetable-controls label {
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--text);
 }
 
 .timetable-controls select {
-    padding: 10px 15px;
-    border: 1px solid #dcd9eb;
-    border-radius: 8px;
+    min-width: 160px;
+    padding: 11px 16px;
+    border: 2px solid #dcd5fa;
+    border-radius: 9px;
     background-color: var(--white);
-    color: var(--text);
+    color: var(--primary);
     font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -72,7 +78,7 @@
 
 .timetable-table {
     width: 100%;
-    min-width: 850px;
+    min-width: 650px;
     border-collapse: collapse;
     text-align: left;
 }
@@ -93,6 +99,7 @@
     padding: 17px 15px;
     border-bottom: 1px solid #eeeeF5;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .timetable-table tbody tr {
@@ -109,12 +116,28 @@
 
 /* 6. Highlight course codes */
 
-.timetable-table td:nth-child(3) {
+.timetable-table td:nth-child(2) {
     color: var(--primary);
     font-weight: 700;
+    white-space: nowrap;
 }
 
-/* 7. Tablet and mobile screens */
+/* 7. Day labels */
+
+.timetable-table td:first-child {
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* 8. Empty timetable message */
+
+.timetable-table td[colspan] {
+    text-align: center;
+    padding: 30px 15px;
+    color: var(--muted);
+}
+
+/* 9. Tablet and mobile screens */
 
 @media (max-width: 768px) {
     .timetable-page {
@@ -126,7 +149,7 @@
     }
 
     .timetable-controls {
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
     }
 }
@@ -141,8 +164,9 @@
     }
 
     .timetable-controls {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: column;
+        gap: 10px;
     }
 
     .timetable-controls select {
@@ -150,7 +174,7 @@
     }
 }
 
-/* 8. Reduced motion accessibility */
+/* 10. Reduced motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
     .timetable-table tbody tr {

@@ -1,7 +1,27 @@
 
 /* =================================
-   CLASSHUB - LECTURE SYSTEM
+   CLASSHUB - LECTURE ACCESS SYSTEM
    ================================= */
+
+// Approved usernames
+const privilegedUsernames = [
+    "CHUB-7KQ29",
+    "CHUB-M4X81",
+    "CHUB-P9D63",
+    "CHUB-T2W57",
+    "CHUB-R8F14"
+];
+
+// Check the username saved at ClassHub login
+function hasLectureAccess() {
+    const username = localStorage.getItem("classhubUsername");
+
+    if (!username) return false;
+
+    return privilegedUsernames.includes(
+        username.trim().toUpperCase()
+    );
+}
 
 function loadLectures() {
     const container = document.getElementById("lecture-container");
@@ -30,7 +50,8 @@ function loadLectures() {
 
     if (!course) {
         heading.textContent = "Course not found";
-        description.textContent = "Please select a course from the Notes page.";
+        description.textContent =
+            "Please select a course from the Notes page.";
         container.innerHTML = "";
         return;
     }
@@ -38,6 +59,7 @@ function loadLectures() {
     heading.textContent = course.code;
 
     const materials = course.materials || [];
+    const hasAccess = hasLectureAccess();
 
     // =================================
     // INDIVIDUAL LECTURE VIEW
@@ -61,22 +83,59 @@ function loadLectures() {
         );
 
         description.textContent = "Lecture " + number;
-
         container.innerHTML = "";
 
         const section = document.createElement("div");
         section.className = "lecture-material";
 
-        const title = document.createElement("h2");
-        title.textContent = material
-            ? material.title
-            : "Lecture " + number + " Notes";
+        // No uploaded notes yet
+        if (!material || !material.file) {
+            const title = document.createElement("h2");
+            title.textContent = "Lecture " + number;
 
-        section.appendChild(title);
-
-        if (material && material.file) {
             const message = document.createElement("p");
-            message.textContent = "Your study material is displayed below.";
+            message.textContent =
+                "📭 Notes coming soon! The study material for this lecture has not been published yet.";
+
+            section.appendChild(title);
+            section.appendChild(message);
+        }
+
+        // Notes exist, but username is not approved
+        else if (!hasAccess) {
+            section.className = "lecture-lock-screen";
+
+            const icon = document.createElement("div");
+            icon.className = "lecture-lock-icon";
+            icon.textContent = "🔒";
+
+            const title = document.createElement("h2");
+            title.textContent = "Lecture Locked";
+
+            const message = document.createElement("p");
+            message.textContent =
+                "This lecture is restricted. Enter ClassHub using an approved access username to read the study material.";
+
+            const backLink = document.createElement("a");
+            backLink.href =
+                "lecture.html?course=" + encodeURIComponent(course.id);
+            backLink.className = "notes-button";
+            backLink.textContent = "Back to Lectures";
+
+            section.appendChild(icon);
+            section.appendChild(title);
+            section.appendChild(message);
+            section.appendChild(backLink);
+        }
+
+        // Approved username: show notes
+        else {
+            const title = document.createElement("h2");
+            title.textContent = material.title;
+
+            const message = document.createElement("p");
+            message.textContent =
+                "Your study material is displayed below.";
 
             const pdf = document.createElement("iframe");
             pdf.className = "lecture-pdf";
@@ -91,15 +150,10 @@ function loadLectures() {
             openLink.className = "notes-button";
             openLink.textContent = "Open PDF in New Tab";
 
+            section.appendChild(title);
             section.appendChild(message);
             section.appendChild(pdf);
             section.appendChild(openLink);
-        } else {
-            const message = document.createElement("p");
-            message.textContent =
-                "The study material for this lecture has not been uploaded yet.";
-
-            section.appendChild(message);
         }
 
         const backLink = document.createElement("a");
@@ -128,6 +182,8 @@ function loadLectures() {
             item => item.number === i
         );
 
+        const isPublished = Boolean(material && material.file);
+
         const card = document.createElement("article");
         card.className = "lecture-card";
 
@@ -136,7 +192,6 @@ function loadLectures() {
 
         const icon = document.createElement("span");
         icon.className = "lecture-icon";
-        icon.textContent = "📖";
 
         const textGroup = document.createElement("div");
 
@@ -144,9 +199,17 @@ function loadLectures() {
         title.textContent = "Lecture " + i;
 
         const subtitle = document.createElement("p");
-        subtitle.textContent = material
-            ? material.title
-            : "Study material coming soon";
+
+        if (!isPublished) {
+            icon.textContent = "📖";
+            subtitle.textContent = "Notes coming soon";
+        } else if (!hasAccess) {
+            icon.textContent = "🔒";
+            subtitle.textContent = "Restricted lecture";
+        } else {
+            icon.textContent = "📖";
+            subtitle.textContent = material.title;
+        }
 
         textGroup.appendChild(title);
         textGroup.appendChild(subtitle);
@@ -154,23 +217,30 @@ function loadLectures() {
         info.appendChild(icon);
         info.appendChild(textGroup);
 
-        const link = document.createElement("a");
-        link.href =
-            "lecture.html?course=" +
-            encodeURIComponent(course.id) +
-            "&lecture=" + i;
-
-        link.className = "notes-button";
-        link.textContent = "Open Lecture";
-
         card.appendChild(info);
-        card.appendChild(link);
+
+        // Only published notes can be opened
+        if (isPublished) {
+            const link = document.createElement("a");
+
+            link.href =
+                "lecture.html?course=" +
+                encodeURIComponent(course.id) +
+                "&lecture=" + i;
+
+            link.className = "notes-button";
+            link.textContent = hasAccess
+                ? "Open Lecture"
+                : "Unlock Lecture";
+
+            card.appendChild(link);
+        }
 
         container.appendChild(card);
     }
 }
 
-// Start the lecture system after the page is ready.
+// Start lecture system
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", loadLectures);
 } else {

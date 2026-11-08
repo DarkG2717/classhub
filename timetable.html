@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="View your weekly ClassHub course timetable, venues and lecturers.">
+    <meta name="description" content="View your weekly ClassHub timetable, course codes, times and venues.">
 
     <title>Class Timetable | ClassHub</title>
-    
+
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/timetable.css">
@@ -38,43 +39,47 @@
 
         <section class="timetable-heading">
             <h1>My Class Timetable</h1>
-            <p>Keep track of your lectures, venues and lecturers.</p>
+            <p>Your weekly lectures, times and venues — all in one place.</p>
         </section>
 
+        <!-- Group selector -->
         <section class="timetable-controls">
-            <label for="day-filter">Filter by day:</label>
 
-            <select id="day-filter">
-                <option value="all">All days</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
+            <label for="group-filter">Select your group:</label>
+
+            <select id="group-filter">
+                <option value="A">Group A</option>
+                <option value="B">Group B</option>
             </select>
+
         </section>
 
+        <!-- Timetable -->
         <section class="timetable-section">
+
             <div class="table-container">
+
                 <table class="timetable-table">
+
                     <thead>
                         <tr>
                             <th scope="col">Day</th>
-                            <th scope="col">Time</th>
                             <th scope="col">Course Code</th>
-                            <th scope="col">Course Title</th>
+                            <th scope="col">Time</th>
                             <th scope="col">Venue</th>
-                            <th scope="col">Lecturer</th>
                         </tr>
                     </thead>
 
                     <tbody id="timetable-body">
                         <tr>
-                            <td colspan="6">Loading timetable...</td>
+                            <td colspan="4">Loading timetable...</td>
                         </tr>
                     </tbody>
+
                 </table>
+
             </div>
+
         </section>
 
     </main>

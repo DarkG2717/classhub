@@ -1,3 +1,4 @@
+
 /* =================================
    CLASSHUB - COURSE DATA
    ================================= */
@@ -56,6 +57,21 @@ window.classHubCourses = [
                 number: 1,
                 title: "Communication: Concepts, Processes, Forms, English in Nigeria, and Developmental Language Skills",
                 file: "assets/documents/GST-111/lecture-1.pdf"
+            }
+        ]
+    },
+
+    {
+        id: "cos-101",
+        code: "COS 101",
+        title: "Introduction to Computing Sciences",
+        description: "Lecture materials for COS 101.",
+        lectures: 1,
+        materials: [
+            {
+                number: 1,
+                title: "Introduction to Computing Sciences",
+                file: "assets/documents/COS-101/lecture-1.pdf"
             }
         ]
     }

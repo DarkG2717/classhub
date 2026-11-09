@@ -3,15 +3,22 @@
    CLASSHUB - MAIN JAVASCRIPT
    ================================= */
 
-// Automatically display the current year in the footer
+// =================================
+// FOOTER YEAR
+// =================================
+
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
 
-// Highlight the current page in the navigation
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+// =================================
+// CURRENT PAGE NAVIGATION
+// =================================
+
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
 
 const navigationLinks = document.querySelectorAll(".nav-links a");
 
@@ -25,5 +32,58 @@ navigationLinks.forEach((link) => {
     }
 });
 
-// Display a message in the browser console
+// =================================
+// CLASSHUB LIGHT / DARK MODE
+// =================================
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+const themeLabel = document.getElementById("theme-label");
+
+function applyTheme(theme) {
+
+    document.documentElement.setAttribute("data-theme", theme);
+
+    const isDark = theme === "dark";
+
+    if (themeIcon) {
+        themeIcon.textContent = isDark ? "☀️" : "🌙";
+    }
+
+    if (themeLabel) {
+        themeLabel.textContent = isDark ? "Light Mode" : "Dark Mode";
+    }
+
+    if (themeToggle) {
+        themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
+
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+    }
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem("classHubTheme") || "light";
+
+applyTheme(savedTheme);
+
+// Toggle theme
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", function () {
+
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+
+        const newTheme =
+            currentTheme === "dark" ? "light" : "dark";
+
+        localStorage.setItem("classHubTheme", newTheme);
+
+        applyTheme(newTheme);
+    });
+}
+
 console.log("ClassHub is running successfully!");

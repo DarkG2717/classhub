@@ -3,22 +3,47 @@
    CLASSHUB - MAIN STYLESHEET
    ================================= */
 
-/* 1. Global settings */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =================================
+   THEME VARIABLES
+   ================================= */
+
 :root {
+    color-scheme: light;
+
     --primary: #6c4ce4;
     --primary-dark: #5032bd;
     --background: #f7f7fc;
+    --surface: #ffffff;
     --text: #25243a;
     --muted: #68677a;
+    --border: #eeeeF5;
     --white: #ffffff;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --primary: #a58bff;
+    --primary-dark: #8b6cf0;
+    --background: #101426;
+    --surface: #1b2239;
+    --text: #f1efff;
+    --muted: #b5b4ca;
+    --border: #303852;
+    --white: #1b2239;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =================================
+   GENERAL STYLES
+   ================================= */
 
 html {
     scroll-behavior: smooth;
@@ -29,6 +54,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -36,15 +62,18 @@ a {
     text-decoration: none;
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
     outline: 3px solid #ffae42;
     outline-offset: 4px;
 }
 
-/* 2. Navigation */
+/* =================================
+   HEADER AND NAVIGATION
+   ================================= */
 
 .site-header {
-    background-color: var(--white);
+    background-color: var(--surface);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     position: relative;
     z-index: 10;
@@ -87,11 +116,47 @@ a:focus-visible {
     color: var(--primary);
 }
 
-/* 3. Hero section */
+/* =================================
+   THEME TOGGLE BUTTON
+   ================================= */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: var(--background);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+#theme-icon {
+    font-size: 17px;
+}
+
+/* =================================
+   HERO SECTION
+   ================================= */
 
 .hero {
     background: linear-gradient(135deg, #6c4ce4, #9875f5);
-    color: var(--white);
+    color: #ffffff;
     padding: 90px 20px;
     text-align: center;
 }
@@ -116,13 +181,12 @@ a:focus-visible {
 
 .hero-button {
     display: inline-block;
-    background-color: var(--white);
-    color: var(--primary-dark);
+    background-color: #ffffff;
+    color: #5032bd;
     padding: 13px 28px;
     border-radius: 30px;
     font-weight: 700;
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-button:hover {
@@ -130,7 +194,9 @@ a:focus-visible {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* 4. Welcome section */
+/* =================================
+   WELCOME SECTION
+   ================================= */
 
 .welcome {
     text-align: center;
@@ -149,7 +215,9 @@ a:focus-visible {
     font-size: 16px;
 }
 
-/* 5. Dashboard */
+/* =================================
+   DASHBOARD CARDS
+   ================================= */
 
 .dashboard {
     max-width: 1200px;
@@ -162,19 +230,19 @@ a:focus-visible {
 
 .card {
     display: block;
-    background-color: var(--white);
+    background-color: var(--surface);
+    color: var(--text);
     padding: 30px;
     border-radius: 18px;
     min-height: 175px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eeeeF5;
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card h2 {
@@ -187,14 +255,12 @@ a:focus-visible {
     font-size: 15px;
 }
 
-/* 6. Card colours */
-
 .timetable-card {
     border-top: 5px solid #4285f4;
 }
 
 .timetable-card h2 {
-    color: #2870dc;
+    color: #4285f4;
 }
 
 .notes-card {
@@ -221,7 +287,9 @@ a:focus-visible {
     color: #239b70;
 }
 
-/* 7. Footer */
+/* =================================
+   FOOTER
+   ================================= */
 
 .site-footer {
     background-color: #25243a;
@@ -231,7 +299,9 @@ a:focus-visible {
     font-size: 14px;
 }
 
-/* 8. Tablet responsiveness */
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
 
 @media (max-width: 768px) {
     .navbar {
@@ -253,8 +323,6 @@ a:focus-visible {
     }
 }
 
-/* 9. Mobile responsiveness */
-
 @media (max-width: 550px) {
     .logo {
         font-size: 25px;
@@ -266,6 +334,10 @@ a:focus-visible {
 
     .nav-links a {
         font-size: 14px;
+    }
+
+    .theme-toggle {
+        padding: 9px 14px;
     }
 
     .hero {
@@ -294,7 +366,9 @@ a:focus-visible {
     }
 }
 
-/* 10. Reduced motion accessibility */
+/* =================================
+   REDUCED MOTION
+   ================================= */
 
 @media (prefers-reduced-motion: reduce) {
     html {

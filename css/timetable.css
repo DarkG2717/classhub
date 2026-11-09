@@ -39,7 +39,14 @@
     margin-bottom: 25px;
     padding: 18px;
     background: #f0edff;
+    border: 1px solid #e5defe;
     border-radius: 12px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+:root[data-theme="dark"] .timetable-controls {
+    background: #202945;
+    border-color: #384365;
 }
 
 .timetable-controls label {
@@ -52,11 +59,22 @@
     padding: 11px 16px;
     border: 2px solid #dcd5fa;
     border-radius: 9px;
-    background-color: var(--white);
-    color: var(--primary);
+    background-color: var(--surface);
+    color: var(--text);
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
+}
+
+:root[data-theme="dark"] .timetable-controls select {
+    border-color: #59658b;
+    background-color: #151d33;
+    color: #f1efff;
+}
+
+.timetable-controls select option {
+    background-color: var(--surface);
+    color: var(--text);
 }
 
 .timetable-controls select:focus-visible {
@@ -69,9 +87,10 @@
 .table-container {
     width: 100%;
     overflow-x: auto;
-    background-color: var(--white);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow);
 }
 
 /* 5. Timetable table */
@@ -84,8 +103,8 @@
 }
 
 .timetable-table thead {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--primary-dark);
+    color: #ffffff;
 }
 
 .timetable-table th {
@@ -97,17 +116,27 @@
 
 .timetable-table td {
     padding: 17px 15px;
-    border-bottom: 1px solid #eeeeF5;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
     font-size: 14px;
     line-height: 1.5;
 }
 
 .timetable-table tbody tr {
+    background-color: var(--surface);
     transition: background-color 0.2s ease;
 }
 
+/* Light mode hover */
+
 .timetable-table tbody tr:hover {
-    background-color: #f5f2ff;
+    background-color: #f0edff;
+}
+
+/* Dark mode hover - no white overlay */
+
+:root[data-theme="dark"] .timetable-table tbody tr:hover {
+    background-color: #293452;
 }
 
 .timetable-table tbody tr:last-child td {
@@ -177,7 +206,8 @@
 /* 10. Reduced motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
-    .timetable-table tbody tr {
+    .timetable-table tbody tr,
+    .timetable-controls {
         transition: none;
     }
 }

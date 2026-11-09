@@ -35,7 +35,22 @@ const announcementsData = [
         expiresAt: "2026-11-18T23:59:59",
         description: "",
         venue: "University Stadium",
-        image: "assets/images/bu-fest-optimized.jpg"
+        image: "assets/images/bu-fest-optimized.jpg",
+        eventStatus: "free",
+    },
+    {
+        title: "The Give Back Fest",
+        category: "activity",
+        date: "2026-11-22T09:00:00",
+        displayDate: "November 22, 2026",
+        time: "9:00 AM – 8:00 PM",
+        expiresAt: "2026-11-22T23:59:59",
+        description: "",
+        venue: "The University Stadium",
+        image: "assets/images/give-back-fest.jpg",
+        eventStatus: "paid",
+        registrationUrl: "https://www.a3tickets.com/event/the-giveback-fest/6ace5eea84f52e821cac2628",
+        registrationLabel: "Buy Event Tickets"
     }
 ];
 
@@ -44,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("announcements-container");
     const filter = document.getElementById("announcement-filter");
 
-    // Check if announcements container exists
     if (!container) {
         console.error("Announcements container not found!");
         return;
@@ -73,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return category === "all" || item.category === category;
         });
 
-        // Show message when there are no announcements
+        // Empty state
         if (filteredData.length === 0) {
 
             const emptyState = document.createElement("div");
@@ -94,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Create each announcement card
+        // Create announcement cards
         filteredData.forEach(item => {
 
             const card = document.createElement("article");
@@ -112,17 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const title = document.createElement("h2");
             title.textContent = item.title;
 
-            // Date with calendar emoji
             const date = document.createElement("p");
             date.className = "announcement-date";
             date.textContent = "📅 Date: " + item.displayDate;
 
-            // Time with clock emoji
             const time = document.createElement("p");
             time.className = "announcement-time";
             time.textContent = "🕒 Time: " + item.time;
 
-            // Venue with location emoji
             const venue = document.createElement("p");
             venue.className = "announcement-venue";
             venue.textContent = "📍 Venue: " + item.venue;
@@ -132,6 +143,47 @@ document.addEventListener("DOMContentLoaded", function () {
             content.appendChild(date);
             content.appendChild(time);
             content.appendChild(venue);
+
+            // EVENT PAYMENT / REGISTRATION SECTION
+            if (item.eventStatus) {
+
+                const statusBox = document.createElement("div");
+                statusBox.className = "event-status-box";
+
+                const statusLabel = document.createElement("span");
+                statusLabel.className =
+                    "event-status-label " + item.eventStatus;
+
+                if (item.eventStatus === "paid") {
+                    statusLabel.textContent = "💳 Paid Event";
+                } else if (item.eventStatus === "free") {
+                    statusLabel.textContent = "🎉 Free Event";
+                } else {
+                    statusLabel.textContent = "📝 Registration Required";
+                }
+
+                statusBox.appendChild(statusLabel);
+
+                if (item.registrationUrl) {
+
+                    const registrationButton =
+                        document.createElement("a");
+
+                    registrationButton.className =
+                        "event-registration-button";
+
+                    registrationButton.textContent =
+                        item.registrationLabel || "Register Here";
+
+                    registrationButton.href = item.registrationUrl;
+                    registrationButton.target = "_blank";
+                    registrationButton.rel = "noopener noreferrer";
+
+                    statusBox.appendChild(registrationButton);
+                }
+
+                content.appendChild(statusBox);
+            }
 
             card.appendChild(content);
 
@@ -145,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 poster.className = "announcement-image";
                 poster.loading = "lazy";
 
-                // Poster dimensions
                 poster.style.width = "150px";
                 poster.style.height = "190px";
                 poster.style.minWidth = "150px";
@@ -154,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 poster.style.objectFit = "cover";
                 poster.style.objectPosition = "center";
 
-                // Remove poster if the file cannot be found
                 poster.onerror = function () {
                     console.error(
                         "Could not load poster image:",
@@ -170,10 +220,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Display all active announcements initially
+    // Initial display
     displayAnnouncements();
 
-    // Filter announcements by category
+    // Category filter
     if (filter) {
         filter.addEventListener("change", function () {
             displayAnnouncements(filter.value);

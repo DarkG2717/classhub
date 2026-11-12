@@ -80,6 +80,13 @@ const timetableData = [
         venue: "SCLT (SAT)",
         group: "all"
     },
+    {
+        day: "Wednesday",
+        courseCode: "COSC 107",
+        time: "11:00 AM - 1:00 PM",
+        venue: "Studio 2 (New Horizons)",
+        group: "all"
+    },
 
     // THURSDAY
     {

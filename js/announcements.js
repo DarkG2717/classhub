@@ -36,7 +36,7 @@ const announcementsData = [
         description: "",
         venue: "University Stadium",
         image: "assets/images/bu-fest-optimized.jpg",
-        eventStatus: "free",
+        eventStatus: "free"
     },
     {
         title: "The Give Back Fest",
@@ -51,6 +51,29 @@ const announcementsData = [
         eventStatus: "paid",
         registrationUrl: "https://www.a3tickets.com/event/the-giveback-fest/6ace5eea84f52e821cac2628",
         registrationLabel: "Buy Event Tickets"
+    },
+    {
+        title: "Matriculation Ceremony",
+        category: "announcement",
+        date: "2026-11-20T00:00:00",
+        displayDate: "Friday, 20 November 2026",
+        time: "Time to be announced",
+        expiresAt: "2026-11-20T23:59:59",
+        description: "A new chapter begins! Join us as we celebrate the matriculation of our students.",
+        venue: "The University Stadium",
+        image: "assets/images/matriculation-poster.jpg"
+    },
+    {
+        title: "Freshers' Picnic",
+        category: "activity",
+        date: "2026-11-15T13:00:00",
+        displayDate: "Sunday, 15 November 2026",
+        time: "1:00 PM - 5:00 PM",
+        expiresAt: "2026-11-15T23:59:59",
+        description: "Join us at Andrew's Park for an afternoon of refreshments, games, networking and good vibes!",
+        venue: "Andrew's Park",
+        eventStatus: "free",
+        image: "assets/images/freshers-picnic.jpg"
     }
 ];
 
@@ -64,6 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // Category labels
+    const categoryLabels = {
+        activity: "🎉 CLASS ACTIVITY",
+        announcement: "📢 ANNOUNCEMENT",
+        test: "📝 TEST / EXAM",
+        assignment: "📚 ASSIGNMENT"
+    };
+
     // Display announcements
     function displayAnnouncements(category = "all") {
 
@@ -73,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Remove expired events
         const activeAnnouncements = announcementsData.filter(item => {
-
             const expiryDate = new Date(item.expiresAt);
 
             return (
@@ -121,7 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const categoryLabel = document.createElement("span");
             categoryLabel.className =
                 "announcement-category " + item.category;
-            categoryLabel.textContent = "🎉 CLASS ACTIVITY";
+
+            categoryLabel.textContent =
+                categoryLabels[item.category] || "📢 CLASS UPDATE";
 
             const title = document.createElement("h2");
             title.textContent = item.title;

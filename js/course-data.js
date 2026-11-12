@@ -19,7 +19,13 @@ window.classHubCourses = [
         title: "Mathematics",
         description: "Lecture materials for MTH 101.",
         lectures: 1,
-        materials: []
+        materials: [
+            {
+                number: 1,
+                title: "Set Theory",
+                file: "assets/documents/MTH-101/lecture-1.pdf"
+            }
+        ]
     },
 
     {
@@ -57,6 +63,11 @@ window.classHubCourses = [
                 number: 1,
                 title: "Communication: Concepts, Processes, Forms, English in Nigeria, and Developmental Language Skills",
                 file: "assets/documents/GST-111/lecture-1.pdf"
+            },
+            {
+                number: 2,
+                title: "Developmental Language Skills",
+                file: "assets/documents/GST-111/lecture-2.pdf"
             }
         ]
     },
